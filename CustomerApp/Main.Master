@@ -1,0 +1,44 @@
+﻿<%@ Master Language="VB" AutoEventWireup="false" CodeBehind="Main.master.vb" Inherits="CustomerApp.Main" %>
+
+<!DOCTYPE html>
+
+<html xmlns="http://www.w3.org/1999/xhtml">
+<head runat="server">
+
+    <title>Tatil Sepeti - CustomerApp</title>
+
+    <%----validator-----%>
+    <script src="validator/jquery-1.6.min.js" type="text/javascript"></script>
+    <script src="validator/jquery.validationEngine-en.js" type="text/javascript"></script>
+    <script src="validator/jquery.validationEngine.js" type="text/javascript"></script>
+    <link href="validator/template.css" rel="stylesheet" type="text/css" />
+    <link href="validator/validationEngine.jquery.css" rel="stylesheet" type="text/css" />
+    <%------------------%>
+
+    <link href="Content/css/main.css" rel="stylesheet" type="text/css" />
+
+    <asp:ContentPlaceHolder ID="head" runat="server">
+    </asp:ContentPlaceHolder>
+    <script type="text/javascript">
+        jQuery(document).ready(function () {
+            jQuery("#form1").validationEngine();
+        });
+    </script>
+</head>
+<body>
+    <form id="form1" runat="server">
+        <asp:ScriptManager ID="ScriptManager1" runat="server">
+        </asp:ScriptManager>
+        <div id="wrapper">
+            <div id="header"></div>
+            <div id="mainContainer">
+                <asp:ContentPlaceHolder ID="ContentPlaceHolder1" runat="server">
+                </asp:ContentPlaceHolder>
+            </div>
+            <div id="footer"></div>
+
+        </div>
+
+    </form>
+</body>
+</html>

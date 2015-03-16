@@ -1,0 +1,106 @@
+﻿<?xml version="1.0" encoding="utf-8"?><Database Name="TatilSepeti" Class="CustomerModelDataContext" xmlns="http://schemas.microsoft.com/linqtosql/dbml/2007">
+  <Connection Mode="AppSettings" ConnectionString="Data Source=31.169.80.70\MSSQLSERVER2012;Initial Catalog=TatilSepeti;User ID=tsUser;Asynchronous Processing=True;MultipleActiveResultSets=True" SettingsObjectName="CustomerApp.Models.My.MySettings" SettingsPropertyName="TatilSepetiConnectionString" Provider="System.Data.SqlClient" />
+  <Table Name="dbo.Customers" Member="Customers">
+    <Type Name="Customer">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="NameSurname" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AuthorizedPerson" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="AuthorizedPersonMobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxOffice" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TaxNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+      <Association Name="City_Customer" Member="City" ThisKey="CityID" OtherKey="CityID" Type="City" IsForeignKey="true" />
+      <Association Name="CustomerAgent_Customer" Member="CustomerAgent" ThisKey="AgentID" OtherKey="AgentID" Type="CustomerAgent" IsForeignKey="true" />
+      <Association Name="Sector_Customer" Member="Sector" ThisKey="SectorID" OtherKey="SectorID" Type="Sector" IsForeignKey="true" />
+    </Type>
+  </Table>
+  <Table Name="tsUser.Cities" Member="Cities">
+    <Type Name="City">
+      <Column Name="CityID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CityName" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="City_Customer" Member="Customers" ThisKey="CityID" OtherKey="CityID" Type="Customer" />
+    </Type>
+  </Table>
+  <Table Name="tsUser.CustomerAgents" Member="CustomerAgents">
+    <Type Name="CustomerAgent">
+      <Column Name="AgentID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="CustomerAgent" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="CustomerAgent_Customer" Member="Customers" ThisKey="AgentID" OtherKey="AgentID" Type="Customer" />
+    </Type>
+  </Table>
+  <Table Name="tsUser.Sectors" Member="Sectors">
+    <Type Name="Sector">
+      <Column Name="SectorID" Type="System.Int32" DbType="Int NOT NULL IDENTITY" IsPrimaryKey="true" IsDbGenerated="true" CanBeNull="false" />
+      <Column Name="Sector" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Association Name="Sector_Customer" Member="Customers" ThisKey="SectorID" OtherKey="SectorID" Type="Customer" />
+    </Type>
+  </Table>
+  <Function Name="tsUser.sp_CustomerCount" Method="sp_CustomerCount">
+    <ElementType Name="sp_CustomerCountResult">
+      <Column Name="" Member="Column1" Type="System.Int32" DbType="Int" CanBeNull="true" />
+    </ElementType>
+  </Function>
+  <Function Name="tsUser.sp_InsertCustomers" Method="sp_InsertCustomers">
+    <Parameter Name="NameSurname" Parameter="nameSurname" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Company" Parameter="company" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mail" Parameter="mail" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SectorID" Parameter="sectorID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AgentID" Parameter="agentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AuthorizedPerson" Parameter="authorizedPerson" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="AuthorizedPersonMobile" Parameter="authorizedPersonMobile" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TaxOffice" Parameter="taxOffice" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TaxNumber" Parameter="taxNumber" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="NVarChar(4000)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="tsUser.sp_UpdateCustomers" Method="sp_UpdateCustomers">
+    <Parameter Name="CustomerID_condition" Parameter="customerID_condition" Type="System.Int32" DbType="Int" />
+    <Parameter Name="NameSurname" Parameter="nameSurname" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Company" Parameter="company" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="Phone" Parameter="phone" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mobile" Parameter="mobile" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Mail" Parameter="mail" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="Address" Parameter="address" Type="System.String" DbType="NVarChar(500)" />
+    <Parameter Name="CityID" Parameter="cityID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="SectorID" Parameter="sectorID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AgentID" Parameter="agentID" Type="System.Int32" DbType="Int" />
+    <Parameter Name="AuthorizedPerson" Parameter="authorizedPerson" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="AuthorizedPersonMobile" Parameter="authorizedPersonMobile" Type="System.String" DbType="NVarChar(50)" />
+    <Parameter Name="TaxOffice" Parameter="taxOffice" Type="System.String" DbType="NVarChar(250)" />
+    <Parameter Name="TaxNumber" Parameter="taxNumber" Type="System.String" DbType="NVarChar(150)" />
+    <Parameter Name="Notes" Parameter="notes" Type="System.String" DbType="NVarChar(4000)" />
+    <Return Type="System.Int32" />
+  </Function>
+  <Function Name="tsUser.sp_CustomersbyID" Method="sp_CustomersbyID">
+    <Parameter Name="CustomerID" Parameter="customerID" Type="System.Int32" DbType="Int" />
+    <ElementType Name="sp_CustomersbyIDResult">
+      <Column Name="CustomerID" Type="System.Int32" DbType="Int NOT NULL" CanBeNull="false" />
+      <Column Name="NameSurname" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Company" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="Phone" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Mail" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="Address" Type="System.String" DbType="NVarChar(500)" CanBeNull="true" />
+      <Column Name="CityID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="SectorID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AgentID" Type="System.Int32" DbType="Int" CanBeNull="true" />
+      <Column Name="AuthorizedPerson" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="AuthorizedPersonMobile" Type="System.String" DbType="NVarChar(50)" CanBeNull="true" />
+      <Column Name="TaxOffice" Type="System.String" DbType="NVarChar(250)" CanBeNull="true" />
+      <Column Name="TaxNumber" Type="System.String" DbType="NVarChar(150)" CanBeNull="true" />
+      <Column Name="Notes" Type="System.String" DbType="NVarChar(4000)" CanBeNull="true" />
+    </ElementType>
+  </Function>
+</Database>

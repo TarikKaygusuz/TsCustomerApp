@@ -1,0 +1,222 @@
+﻿body {
+    font-family: Arial, Verdana, Tahoma, sans-serif;
+    margin: 5px 0 5px 0;
+    padding: 0;
+    width: 100%;
+    font-size: 12px;
+    color: #3d3d3d;
+    background: #f5f5f5;
+}
+
+#mainContainer {
+    padding: 30px;
+}
+
+#wrapper {
+    width: 979px;
+    margin: 0 auto;
+    padding: 0;
+    overflow: hidden;
+    background: #f5f5f5;
+    border: 1px solid #cfcfcf;
+}
+
+    #wrapper #header {
+        background: url('../images/header.png');
+        width: 979px;
+        height: 98px;
+    }
+
+
+    #wrapper #footer {
+        background: url('../images/footer.png');
+        width: 979px;
+        height: 362px;
+    }
+
+.clear {
+    clear: both;
+}
+
+.pageTitle {
+    font-size: 20px;
+    font-weight: bold;
+    text-align: center;
+    border-bottom: 1px solid #CCC;
+    margin-bottom: 20px;
+}
+
+
+
+.toolbox {
+    border: 1px solid #CCC;
+    background-color: #EEE;
+    padding: 5px;
+}
+
+.progressbar {
+    width: 100%;
+    text-align: center;
+    margin-top: 10px;
+}
+
+
+input {
+    border: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+    input:hover {
+        background-color: #ccc;
+    }
+
+textarea:hover {
+    background-color: #fff !important;
+}
+
+button {
+    border: none;
+    background-color: #fff;
+    border: 1px solid #ccc;
+}
+
+    button:hover {
+        background-color: #ccc;
+    }
+
+table.musTable {
+}
+
+    table.musTable a {
+        color: #555;
+        font-weight: bold;
+    }
+
+        table.musTable a:hover {
+            color: #000;
+        }
+
+    table.musTable tr.baslik {
+        font-weight: bold;
+        text-align: center;
+    }
+
+        table.musTable tr.baslik td {
+            border-bottom: 2px solid #999;
+        }
+
+    table.musTable tr.tekSatir {
+        background-color: #EEE;
+    }
+
+    table.musTable tr.ciftSatir {
+    }
+
+    table.musTable td {
+        text-align: center;
+        padding: 5px;
+        border-bottom: 1px solid #999;
+    }
+
+        table.musTable td.sol {
+            text-align: left !important;
+        }
+
+.filterTable {
+    width: 100%;
+    padding: 20px;
+    border-bottom: 2px solid #CCC;
+}
+
+    .filterTable input[type=button], .musTable input[type=button], .musTable input[type=button] {
+        border: 1px solid #CCC;
+        font-weight: bold;
+        color: #666;
+        cursor: pointer;
+        background-color: #DDD;
+    }
+
+        .filterTable input[type=button]:hover, .musTable input[type=button]:hover {
+            color: #333;
+            border: 1px solid #AAA;
+            background-color: #EEE;
+        }
+
+.sil input[type=button] {
+    border: 1px solid #CCC;
+    font-weight: bold;
+    color: #666;
+    cursor: pointer;
+    background-color: #DDD;
+}
+
+    .sil input[type=button]:hover {
+        border: 1px solid #C00;
+        color: white;
+        background-color: red;
+    }
+
+td.duzelt, td.sil {
+    background-color: White;
+}
+
+.btndiv {
+    display: inline-block;
+}
+
+.divDll {
+    background: none repeat scroll 0 0 ghostWhite !important;
+    height: 35px !important;
+    margin: 0 !important;
+    width: 250px !important;
+    padding: 3px 6px !important;
+    vertical-align: middle !important;
+}
+
+
+    .btndiv a {
+        text-decoration: none;
+        font-weight: bold;
+        font-size: 12px;
+        color: white;
+        padding: 6px;
+        display: inline-block;
+        background-color: #3366FF;
+        border-radius: 5px;
+        box-shadow: 1px 1px 1px #9b3a00;
+        -webkit-box-shadow: 1px 1px 1px #FFFF66;
+        border-top: 1px solid #FFFF66;
+        border-left: 1px solid #FFFF66;
+    }
+
+td.label {
+  background-color: #9aa1a7;
+  color: white;
+  font-weight: bold;
+  height: 9px;
+  width: 150px;
+  border-radius: 5px;
+  padding: 10px;
+  text-align: center;
+}
+
+.div_textbox input {
+    background: none repeat scroll 0 0 ghostWhite !important;
+    height: 20px !important;
+    margin: 0 !important;
+    width: 250px !important;
+    padding: 3px 6px !important;
+    vertical-align: middle !important;
+}
+
+.div_textbox textarea {
+    background: none repeat scroll 0 0 ghostWhite;
+    height: 75px;
+    margin: 0 !important;
+    width: 250px;
+    border: 1px solid #aaa;
+    padding: 3px 6px;
+    vertical-align: middle;
+}
+

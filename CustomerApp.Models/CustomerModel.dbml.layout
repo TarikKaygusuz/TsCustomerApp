@@ -1,0 +1,51 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<ordesignerObjectsDiagram dslVersion="1.0.0.0" absoluteBounds="0, 0, 11, 8.5" name="CustomerModel">
+  <DataContextMoniker Name="/CustomerModelDataContext" />
+  <nestedChildShapes>
+    <classShape Id="6de3a5cf-6a79-4de0-ae54-ccb8bc39a74d" absoluteBounds="3.375, 0.5, 2, 3.6939111328124996">
+      <DataClassMoniker Name="/CustomerModelDataContext/Customer" />
+      <nestedChildShapes>
+        <elementListCompartment Id="dda0ff30-cdc5-4136-8b30-f6c6f938c316" absoluteBounds="3.3900000000000006, 0.96, 1.9700000000000002, 3.1339111328125" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <classShape Id="f4b07490-147a-4d5a-841c-926e1697a00d" absoluteBounds="0.5, 0.5, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CustomerModelDataContext/City" />
+      <nestedChildShapes>
+        <elementListCompartment Id="9c6b08ad-a3ea-4964-b2bb-868ad9be8365" absoluteBounds="0.51500000000000012, 0.96, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 1.09699625651042); (3.375 : 1.09699625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CustomerModelDataContext/City/City_Customer" />
+      <nodes>
+        <classShapeMoniker Id="f4b07490-147a-4d5a-841c-926e1697a00d" />
+        <classShapeMoniker Id="6de3a5cf-6a79-4de0-ae54-ccb8bc39a74d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="2776eded-c876-4b13-bef4-6f6bb43014e2" absoluteBounds="0.5, 1.875, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CustomerModelDataContext/CustomerAgent" />
+      <nestedChildShapes>
+        <elementListCompartment Id="257a2b1b-a42f-4223-87ea-b4c6af147dc5" absoluteBounds="0.51500000000000012, 2.335, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 2.47199625651042); (3.375 : 2.47199625651042)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CustomerModelDataContext/CustomerAgent/CustomerAgent_Customer" />
+      <nodes>
+        <classShapeMoniker Id="2776eded-c876-4b13-bef4-6f6bb43014e2" />
+        <classShapeMoniker Id="6de3a5cf-6a79-4de0-ae54-ccb8bc39a74d" />
+      </nodes>
+    </associationConnector>
+    <classShape Id="821924b7-0fd0-4887-bd76-7c3633d33a0f" absoluteBounds="0.5, 3.25, 2, 1.1939925130208333">
+      <DataClassMoniker Name="/CustomerModelDataContext/Sector" />
+      <nestedChildShapes>
+        <elementListCompartment Id="61bc91d0-3e15-44f6-bd70-5cf372eeb2bf" absoluteBounds="0.51500000000000012, 3.71, 1.9700000000000002, 0.63399251302083326" name="DataPropertiesCompartment" titleTextColor="Black" itemTextColor="Black" />
+      </nestedChildShapes>
+    </classShape>
+    <associationConnector edgePoints="[(2.5 : 3.72195556640625); (3.375 : 3.72195556640625)]" fixedFrom="NotFixed" fixedTo="NotFixed">
+      <AssociationMoniker Name="/CustomerModelDataContext/Sector/Sector_Customer" />
+      <nodes>
+        <classShapeMoniker Id="821924b7-0fd0-4887-bd76-7c3633d33a0f" />
+        <classShapeMoniker Id="6de3a5cf-6a79-4de0-ae54-ccb8bc39a74d" />
+      </nodes>
+    </associationConnector>
+  </nestedChildShapes>
+</ordesignerObjectsDiagram>
